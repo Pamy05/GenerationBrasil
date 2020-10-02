@@ -1,0 +1,49 @@
+Crie um banco de dados com o nome de “db_diversos”;
+Dentro desse banco de dados devem conter as seguintes tabelas e os seguintes SELECT’s:
+1. Uma tabela que represente uma escola, contendo:
+ ID do aluno;
+ Idade do aluno;
+ + 5 informações que você considera importante;
+
+*Importante a tabela precisa ter 15 dados de alunos;
+Para essa tabela considere fazer o SELECT que retorne:
+ Todos os participantes maiores que 18 anos;
+ Todos os participantes menores que 18 anos;
+ Todos os participantes com a idade entre 20 e 25 anos;
+======================================================
+create database db_diversos;
+
+use db_diversos;
+
+create table tb_escola(
+id bigint(5) auto_increment,
+nome varchar(50),
+idade int,
+sexo varchar(10),
+aniversario date,
+serie int,
+matricula int,
+primary key(id)
+);
+
+insert into tb_escola (nome,idade,sexo,aniversario,serie,matricula) values ("Pedro Henrique",19,"Masculino",20/02/2001,3,2020);
+insert into tb_escola (nome,idade,sexo,aniversario,serie,matricula) values ("Anabelle Belle",18,"Feminino",21/07/2002,3,6666);
+insert into tb_escola (nome,idade,sexo,aniversario,serie,matricula) values ("Henrique Lira",17,"Masculino",20/10/2003,2,3020);
+insert into tb_escola (nome,idade,sexo,aniversario,serie,matricula) values ("Paula Neski",19,"Masculino",09/03/2001,3,2020);
+insert into tb_escola (nome,idade,sexo,aniversario,serie,matricula) values ("Matheus Pedro",16,"Masculino",24/04/2004,2,3320);
+insert into tb_escola (nome,idade,sexo,aniversario,serie,matricula) values ("Carol Cisne",16,"Feminino",20/02/2004,2,2220);
+insert into tb_escola (nome,idade,sexo,aniversario,serie,matricula) values ("Enzo Piehi",15,"Masculino",20/05/2005,1,2029);
+insert into tb_escola (nome,idade,sexo,aniversario,serie,matricula) values ("Valentina",15,"Feminino",20/02/2005,1,2720);
+insert into tb_escola (nome,idade,sexo,aniversario,serie,matricula) values ("Luis Pedro",15,"Masculino",20/7/2006,1,2770);
+insert into tb_escola (nome,idade,sexo,aniversario,serie,matricula) values ("Madallena Antonia",14,"Feminino",10/02/2007,8,2099);
+insert into tb_escola (nome,idade,sexo,aniversario,serie,matricula) values ("Pietro Chama",13,"Masculino",20/08/2008,8,3220);
+insert into tb_escola (nome,idade,sexo,aniversario,serie,matricula) values ("Barbara Bary",12,"Feminino",01/06/2009,6,5555);
+insert into tb_escola (nome,idade,sexo,aniversario,serie,matricula) values ("Bianca Prado",10,"Feminino",11/07/2011,5,4420);
+insert into tb_escola (nome,idade,sexo,aniversario,serie,matricula) values ("Casandra Baronnete",9,"Feminino",20/02/2012,2,9990);
+insert into tb_escola (nome,idade,sexo,aniversario,serie,matricula) values ("Pedro Silva",9,"Masculino",20/02/2012,2,1020);
+
+select * from tb_escola where idade > 18;
+
+select * from tb_escola where idade < 18;
+
+select * from tb_escola where idade between 20 and 25;

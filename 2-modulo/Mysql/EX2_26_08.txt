@@ -1,0 +1,72 @@
+2. Uma tabela que represente um petshop, contendo:
+ ID do animal;
+ Peso do animal;
+ + 5 informações que você considera importante;
+
+*Importante a tabela também precisa ter 15 dados;
+Para essa tabela considere fazer o SELECT que retorne:
+ Todos os animais maiores que 10 kilos;
+ Todos os animais menores que 10 kilos;
+ Todos os animais es com a idade entre 10 e 30 kilos;
+=====================================================================
+creat database db_petshop;
+
+use db_petshop;
+
+create table tb_animais(
+id bigint auto_increment,
+dono varchar(50),
+nome varchar(50),
+rga varchar(9),
+idade int,
+raça varchar(50),
+peso decimal,
+especie varchar(50),
+primary key (id)
+
+);
+
+alter table tb_animais add column especie varchar (10);
+
+delete from tb_animais where id; 
+
+select * from tb_animais;
+
+alter table tb_animais change peso peso float;
+
+insert into tb_animais (Dono,Nome,rga,idade,raça,peso,especie) values ("Cauã","Maya",184743539,8,"SRD",2.1,"Gato");
+insert into tb_animais (Dono,Nome,rga,idade,raça,peso,especie) values ("Pâmela","Luna",184743539,4,"SRD",2.1,"Gato");
+insert into tb_animais (Dono,Nome,rga,idade,raça,peso,especie) values ("Pâmela","Luna",184743539,4,"SRD",2.1,"Gato");
+
+delete from tb_animais where id = 1; 
+
+insert into tb_animais (Dono,Nome,rga,idade,raça,peso,especie) values ("Nathan","Pingo",114549928,1,"Chines",0.5,"Hamster");
+insert into tb_animais (Dono,Nome,rga,idade,raça,peso,especie) values ("Lorran","Brutos",185351293,4,"American Bully",21.5,"Cachorro");
+insert into tb_animais (Dono,Nome,rga,idade,raça,peso,especie) values ("Bruno","Quenga",390562907,5,"Dalmata",20.5,"Cachorro");
+insert into tb_animais (Dono,Nome,rga,idade,raça,peso,especie) values ("Lucas","Gato",152750162,3,"SRD",2.3,"Gato");
+insert into tb_animais (Dono,Nome,rga,idade,raça,peso,especie) values ("Bruna","Baleia",348368239,8,"SRD",21.5,"Cachorro");
+insert into tb_animais (Dono,Nome,rga,idade,raça,peso,especie) values ("Suzan","Frango",399368917,1,"calopsita",0.5,"Passaro");
+insert into tb_animais (Dono,Nome,rga,idade,raça,peso,especie) values ("Barbara","Horus",337302674,4,"SRD",32.5,"Cachorro");
+insert into tb_animais (Dono,Nome,rga,idade,raça,peso,especie) values ("Diego","Paula",247189005,6,"Dalmata",12.5,"Cachorro");
+insert into tb_animais (Dono,Nome,rga,idade,raça,peso,especie) values ("Xavier","Carlito",163149604,14,"Vira lata caramelo",10.5,"Cachorro");
+insert into tb_animais (Dono,Nome,rga,idade,raça,peso,especie) values ("Paula","Draco",440660671,999,"desconhecido",5000.3,"desconhecido");
+insert into tb_animais (Dono,Nome,rga,idade,raça,peso,especie) values ("Juninho","Play",245493487,4,"Boxer",21.5,"Cachorro");
+insert into tb_animais (Dono,Nome,rga,idade,raça,peso,especie) values ("Cauã","Horus",120172094,3,"Persa",2,"Gato");
+insert into tb_animais (Dono,Nome,rga,idade,raça,peso,especie) values ("Paloma","Pão",100631836,4,"Antwerp Smerle",0.5,"Pomba");
+insert into tb_animais (Dono,Nome,rga,idade,raça,peso,especie) values ("Caio","Lola",408072994,20,"SRD",21.5,"Cachorro");
+
+select * from tb_animais where peso > 10;
+
+select * from tb_animais where peso < 10;
+
+select * from tb_animais where peso between 10 and 30;
+
+
+
+
+
+
+
+
+
+

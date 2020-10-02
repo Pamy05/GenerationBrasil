@@ -1,0 +1,35 @@
+create database db_loja;
+
+create table tb_produtos(
+id bigint(5) AUTO_INCREMENT,
+produto varchar(20) NOT NULL,
+marca varchar(20) not null,
+preço decimal,
+categoria varchar(50),
+ativo boolean,
+PRIMARY KEY (id) -- Definir coluna id como chave primária
+);
+
+insert into tb_produtos (produto, marca, preço, categoria, ativo) values ("bola", "estrela", 20.00, "brinquedo", true);
+insert into tb_produtos (produto, marca, preço, categoria, ativo) values ("boneca", "estrela", 200.00, "brinquedo", true);
+insert into tb_produtos (produto, marca, preço, categoria, ativo) values ("lego batman", "lego", 750.00, "brinquedo", true);
+insert into tb_produtos (produto, marca, preço, categoria, ativo) values ("urso de pelucia", "estrela", 75.00, "brinquedo", false);
+insert into tb_produtos (produto, marca, preço, categoria, ativo) values ("carrinho", "hot wheels", 7.00, "brinquedo", true);
+insert into tb_produtos (produto, marca, preço, categoria, ativo) values ("geladeira", "eletrolux", 1700.00, "eletrodomestico", true);
+insert into tb_produtos (produto, marca, preço, categoria, ativo) values ("geladeira", "brastemp", 2000.00, "eletrodomestico", true);
+insert into tb_produtos (produto, marca, preço, categoria, ativo) values ("televisão", "positivo", 2000.00, "eletrodomestico", true);
+insert into tb_produtos (produto, marca, preço, categoria, ativo) values ("fogão embutido", "brastemp", 1700.00, "eletrodomestico", true);
+insert into tb_produtos (produto, marca, preço, categoria, ativo) values ("maquina de lavar", "brastemp", 3000.00, "eletrodomestico", true);
+insert into tb_produtos (produto, marca, preço, categoria, ativo) values ("camiseta estampada", "adidas", 70.00, "roupas", true);
+insert into tb_produtos (produto, marca, preço, categoria, ativo) values ("camiseta social", "D&E", 120.00, "roupas", true);
+insert into tb_produtos (produto, marca, preço, categoria, ativo) values ("moleton", "lagoste", 80.00, "roupas", true);
+insert into tb_produtos (produto, marca, preço, categoria, ativo) values ("shorts", "adidas", 100.00, "roupas", true);
+insert into tb_produtos (produto, marca, preço, categoria, ativo) values ("casaco", "polo", 50.00, "roupas", true);
+
+select * from tb_produtos;
+
+select * from tb_produtos where preço > 500;
+
+UPDATE tb_produtos SET marca = 'Mikasa' WHERE id = '1';
+
+select * from tb_produtos where preço < 500;

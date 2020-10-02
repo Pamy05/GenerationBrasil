@@ -1,0 +1,47 @@
+3. Uma tabela que represente um varejo, contendo:
+ ID do produto;
+ Preço do produto;
+ Categoria do produto ( Ex: quarto/sala / cozinha / banheiro)
+ 4 informações que você considera importante;
+
+*Importante a tabela também precisa ter 15 dados;
+Para essa tabela considere fazer o SELECT que retorne:
+ Todos os produtos que comecem com a letra “A”;
+ Todos os produtos de uma determinada categoria;
+ Todos os produtos entre $ 1.000 e 1.500 de uma determinada categoria;
+ Todos os produtos listados por uma categoria utilizando like;
+============================================================================
+create database db_varejo;
+use db_varejo;
+
+
+create table tb_produto(
+id bigint auto_increment,
+produto varchar(50),
+categoria varchar(50),
+preço float,
+estoque int,
+primary key(id)
+);
+
+insert into tb_produto (produto,categoria,preço,estoque) values ("Boneca","Brinquedo",30.50, 12);
+insert into tb_produto (produto,categoria,preço,estoque) values ("Carrinho","Brinquedo",100.50, 15);
+insert into tb_produto (produto,categoria,preço,estoque) values ("Lego","Brinquedo",700.50, 5);
+insert into tb_produto (produto,categoria,preço,estoque) values ("Ursinho","Brinquedo",19.50, 30);
+insert into tb_produto (produto,categoria,preço,estoque) values ("Quebra - Cabeça","Brinquedo",72.50, 7);
+insert into tb_produto (produto,categoria,preço,estoque) values ("Caminhão","Brinquedo",40, 2);
+insert into tb_produto (produto,categoria,preço,estoque) values ("Boneco","Brinquedo",47, 4);
+insert into tb_produto (produto,categoria,preço,estoque) values ("Edredon","Casa.cama.Banho",200, 9);
+insert into tb_produto (produto,categoria,preço,estoque) values ("Cortina grande","Casa.cama.Banho",30.50, 12);
+insert into tb_produto (produto,categoria,preço,estoque) values ("Toalha","Casa.cama.Banho",12.50, 20);
+insert into tb_produto (produto,categoria,preço,estoque) values ("Toalha de rosto","Casa.cama.Banho",12.50, 12);
+insert into tb_produto (produto,categoria,preço,estoque) values ("Manta Solteiro","Casa.cama.Banho",30, 12);
+insert into tb_produto (produto,categoria,preço,estoque) values ("Arroz","Alimentos",12, 101);
+insert into tb_produto (produto,categoria,preço,estoque) values ("Chocolate","Alimento",7, 12);
+insert into tb_produto (produto,categoria,preço,estoque) values ("Coca - cola","Alimento",7, 52);
+
+select * from tb_produto where produto like 'A%'; 
+
+select * from tb_produto where categoria = 'Brinquedo'; 
+
+select * from tb_produto where categoria like 'Casa.cama.Banho'; 

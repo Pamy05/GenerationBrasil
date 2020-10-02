@@ -1,0 +1,104 @@
+create database db_generation_game_online
+
+use db_generation_game_online;
+
+create table tb_classe(
+
+id bigint auto_increment,
+
+classe_personagem varchar(20),
+tipo varchar(20),
+raridade boolean,
+
+primary key(id)
+
+);
+
+===============
+
+
+create table tb_personagem(
+
+id bigint auto_increment,
+
+nome_jogador varchar(20),
+nome_personagem varchar(20),
+ataque bigint,
+defesa bigint,
+nivel int,
+
+id_classe bigint not null,
+
+primary key(id),
+foreign key (id_classe) references tb_classe (id)
+);
+
+===============
+
+
+insert into tb_classe (classe_personagem,tipo,raridade) values ("ladino","safado",false);
+insert into tb_classe (classe_personagem,tipo,raridade) values ("elfo dark","suporte",false);
+insert into tb_classe (classe_personagem,tipo,raridade) values ("necromancer","faz o que quer",true);
+insert into tb_classe (classe_personagem,tipo,raridade) values ("guerreiro","combate",false);
+insert into tb_classe (classe_personagem,tipo,raridade) values ("mago","suporte",false);
+===============
+insert into tb_personagem (nome_jogador,nome_personagem,ataque,defesa,nivel,id_classe) values ("Henrique","garnette",6000,6500,67,1);
+insert into tb_personagem (nome_jogador,nome_personagem,ataque,defesa,nivel,id_classe) values ("Paloma","drakon",1200,1500,15,2);
+insert into tb_personagem (nome_jogador,nome_personagem,ataque,defesa,nivel,id_classe) values ("Bianca","gardin",9800,8000,98,3);
+insert into tb_personagem (nome_jogador,nome_personagem,ataque,defesa,nivel,id_classe) values ("Caio","shadow",10000,10000,100,4);
+insert into tb_personagem (nome_jogador,nome_personagem,ataque,defesa,nivel,id_classe) values ("Henrique","garnette",5600,4562,67,5);
+===============
+select * from tb_personagem
+===============
+/**Faça um select que retorne os personagens com o poder de ataque maior do que 2000.
+select * from tb_personagem where ataque > 2000;
+===============
+/**Faça um select trazendo os personagens com poder de defesa entre 1000 e 2000.
+select * from tb_personagem where defesa between 1000 and 2000;
+===============
+/**Faça um select utilizando LIKE buscando os personagens com a letra C.
+select * from tb_personagem where nome_personagem like 'c%';
+===============
+/**Faça um um select com Inner join entre tabela classe e personagem.
+select tb_personagem.nome_jogador, tb_classe.classe_personagem, tb_personagem.nivel from tb_personagem inner  join tb_classe on tb_classe.id = tb_personagem.id_classe
+===============
+/**Faça um select onde traga todos os personagem de uma classe específica (exemplo todos
+os personagens que são arqueiros).
+select tb_personagem.nome_jogador, tb_classe.classe_personagem, tb_personagem.nivel 
+from tb_personagem inner join tb_classe on tb_classe.id = tb_personagem.id_classe
+where tb_classe.classe_personagem like '%ladino%'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
