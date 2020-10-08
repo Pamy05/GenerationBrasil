@@ -16,11 +16,13 @@ export class FeedComponent implements OnInit {
   reverse = true;
 
   postagem: Postagem = new Postagem();
-  listaPostagem: Postagem[];
+  listaPostagens: Postagem[];
+  titulo: string
 
   tema: Tema = new Tema();
   listaTemas: Tema[];
   idTema: number;
+  nomeTema: string
 
   constructor(
     private postagemService: PostagemService,
@@ -30,14 +32,14 @@ export class FeedComponent implements OnInit {
   ngOnInit() {
     window.scroll(0, 0);
     this.findALLPostagens();
-    this.findALLTemas();
+    this.findAllTemas();
   }
 
 
 
   findALLPostagens() {
     this.postagemService.getALLPostagens().subscribe((resp: Postagem[]) => {
-      this.listaPostagem = resp;
+      this.listaPostagens = resp;
     });
 
   }
@@ -59,10 +61,10 @@ export class FeedComponent implements OnInit {
   }
 
 
-  findALLTemas() {
-    this.temaService.getALLTemas().subscribe((resp: Tema[]) => {
-      this.listaTemas;
-    });
+  findAllTemas() {
+    this.temaService.getAllTemas().subscribe((resp: Tema[]) => {
+      this.listaTemas = resp
+    })
   }
 
   findByIdTema() {

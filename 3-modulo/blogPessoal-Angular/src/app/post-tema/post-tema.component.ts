@@ -23,8 +23,9 @@ export class PostTemaComponent implements OnInit {
     this.findALLTemas()
   }
   findALLTemas(){
-    this.temaService.getALLTemas().subscribe((resp: Tema[])=>{
-      this.listaTemas
+    this.temaService.getAllTemas().subscribe((resp: Tema[])=>{
+      this.listaTemas = resp
+      console.log(this.listaTemas)
     })
   }
 

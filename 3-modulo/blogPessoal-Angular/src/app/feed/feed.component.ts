@@ -15,7 +15,7 @@ export class FeedComponent implements OnInit {
   reverse = true
   
   postagem: Postagem = new Postagem()
-  listaPostagem: Postagem[]
+  listaPostagens: Postagem[]
 
   tema: Tema = new Tema()
   listaTemas: Tema[]
@@ -29,14 +29,14 @@ export class FeedComponent implements OnInit {
   ngOnInit() {
     window.scroll(0,0)
     this.findALLPostagens()
-    this.findALLTemas()
+    this.findAllTemas()
   }
     
     
   
   findALLPostagens(){
     this.postagemService.getALLPostagens().subscribe((resp: Postagem[])=>{
-      this.listaPostagem = resp
+      this.listaPostagens = resp
     })
 
   }
@@ -46,21 +46,21 @@ export class FeedComponent implements OnInit {
     this.postagem.tema = this.tema
 
     if(this.postagem.titulo == null || this.postagem.texto == null || this.postagem.tema == null){
-      alert ('Prencha todos os campos antes de publicar! ')
+      alert ('Prencha todos os campos antes de publicar nya! ')
     }else{
       this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem) => {
         this.postagem = resp
         this.postagem = new Postagem()
-        alert ('Postagem realizada com sucesso :)')
+        alert ('Postagem realizada com sucesso nya')
         this.findALLPostagens
       })
     }
   }
  
 
-  findALLTemas(){
-    this.temaService.getALLTemas().subscribe((resp: Tema[])=>{
-      this.listaTemas
+  findAllTemas(){
+    this.temaService.getAllTemas().subscribe((resp: Tema[])=>{
+      this.listaTemas = resp
     })
   }
 
